@@ -13,15 +13,31 @@
           color: white;
           text-align: center;
         }       
-        body > .painel{
+        .container{
            margin-top:20px;
-           margin-left:20px;
-           margin-right: 20px;
+           margin-left:30px;
+           margin-right: 30px;
            height:auto;
            min-height:100%;
            background-image: url(img/orange-bar.jpg);
            background-repeat: repeat-y;
            background-position: 200px ;
+        }
+        #foto{
+          background-image: url(img/apresentacao.jpg);
+          width: 500px;
+          height: 333px;
+          position: fixed;
+          left:300px;
+          top: 300px;
+        }
+        #titulo{
+          background-image: url(img/titulo.jpg);
+          width: 434px;
+          height: 129px;
+          position: fixed;
+          left:100px;
+          top: 130px;
         }
 
   </style>
@@ -32,12 +48,14 @@
   </head>
 
   <body>
-      <div class="painel" style="background-color: white">
-          <div id="orange-box">
-               
+      <div class="container" style="background-color: white">
+          <div id="titulo">
+              
           </div>
+          <div id="foto"></div>
+
       </div>
-      <div class="footer">footer sample</div>
+      <div class="footer"></div>
   </body>
 
   </html>

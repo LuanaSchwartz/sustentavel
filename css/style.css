@@ -31,7 +31,7 @@ footer {
   }
 
 .container{
-    background-image: url(../img/fundo2.png);
+    background-image: url("../img/fundo2.png");
     background-repeat: no-repeat;
 background-size: cover;
     /* background-image: linear-gradient(rgb(234, 241, 234),lightblue); */

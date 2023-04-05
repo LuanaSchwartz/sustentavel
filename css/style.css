@@ -17,34 +17,52 @@ body {
 }
 footer {
     display: flex;
-    justify-content: space-between; /* max. horizontal space between them */
-    align-items: center; /* vertical alignment / centering */
+    justify-content: space-between; 
+    align-items: center;
     height: 50px;
-  }
-
-
-  .content{
-    display: flex;
-    justify-content: space-between; /* max. horizontal space between them */
-    align-items: center; /* vertical alignment / centering */
-    height: 50px;
-  }
-
-.container{
-    background-image: url(../img/fundo2.png);
-    background-repeat: no-repeat;
-background-size: cover;
-    /* background-image: linear-gradient(rgb(234, 241, 234),lightblue); */
-     border-radius: 10px 10px 0px 0px;
-    display: grid;
-    height:93%;
-    margin-top: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
 }
 
-tr{
-  height: 70px;;
+.footer-div-left{
+   margin-left: 5%;
+}
+
+.footer-div-right{
+  margin-right: 5%;
+}
+
+.rede-social{
+  font-size: 14px;
+  color:white;
+}
+
+header{
+  margin:auto;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.container {
+  background-image: url(../img/fundo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px 10px 0px 0px;
+  height: 93%;
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.centraliza{
+  margin:auto;
+  text-align: center
+}
+
+figcaption{
+  font-size: 28px;
+  color:navy;
 }
 
 /*Efeito no Botão*/
@@ -112,6 +130,8 @@ tr{
 }
 /******************************/
 
+/*Icones das redes sociais*/
+/**************************/
 .fa {
     padding: 6px;
     font-size: 15px;
@@ -130,17 +150,7 @@ tr{
     background: #3B5998;
     color: white;
   }
-  
-  .fa-twitter {
-    background: #55ACEE;
-    color: white;
-  }
-  
-  .fa-google {
-    background: #dd4b39;
-    color: white;
-  }
- 
+
   .fa-youtube {
     background: #bb0000;
     color: white;

@@ -1,70 +1,69 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ajusta o tamanho da tela ao device -->
+  <meta charset="utf-8">; <!--comunica aos navegadores, quais sçao os caractéres usados no site-->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ajusta o tamanho da tela ao device -->
   <Title>Projeto Sustentabilidade</Title> <!-- Titulo da página -->
   <link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- Página de estilos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--link para o CDN da fonte awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--link para o 
+  CDN da fonte awesome -->
+
+  
 </head>
 
 <body>
 
-  <div class="container">
-    
-    <!-- O Header contêm o Título do projeto e os botões de navegação-->
-    <header>
-      Sustentabilidade e Consciência Ambiental<br>Palestras Informativas <br><br>
-      <div class="centraliza">
-        <!-- Cada botão é animado através da classe glow-on-hover e abre outra página do projeto através do evento onclick, que quando clicado abre a página especificada no href -->
-        <button class="glow-on-hover" type="button" onclick="window.location.href='index.html';">Quem Somos</button> 
-        <button class="glow-on-hover" type="button" onclick="window.location.href='project.html';">Nosso Projeto</button>
-        <button class="glow-on-hover" type="button" onclick="window.location.href='inscreva.html';">Inscreva-se</button>
-        <button class="glow-on-hover" type="button" onclick="window.location.href='contato.html';">Nosso Contato</button>
+  <header>
+    Sustentabilidade e Consciência Ambiental para todos<br>Palestras Informativas <!--Título do site-->
+    <div class="centraliza" style="background-image: Url(Img/fundo2.png);background-repeat: repeat;;padding-top: 10px;">
+      <!--Cada botão é animado através da classe glow-on-hover e abre outra página do projeto através do evento onclick, 
+      que quando clicado abre a página especificada no href-->
+      <button class="glow-on-hover" type="button" >Quem Somos</button> 
+      <button class="glow-on-hover" type="button" onclick="window.location.href='project.html';">Nosso Projeto</button>
+      <button class="glow-on-hover" type="button" onclick="window.location.href='inscreva.html';">Inscreva-se</button>
+      <button class="glow-on-hover" type="button" onclick="window.location.href='contato.html';">Nosso Contato</button>
+    </div>
+  </header>
+
+  <main style="background-image: Url(Img/fundo.png);">
+        <h2 >Quem Somos</h2>  <!-- subtítulo -->
+        <img id="ImagemQuemSomos" src="../Sustentavel_02/img/logo.png"style="width:180px;float:left;margin:5px">
+        <p style="text-align: justify;">Somos uma empresa formada por um grupo de professores que se uniram para 
+          conscientizar jovens sobre o meio ambiente, e é composto por pessoas engajadas 
+          em questões ambientais e que acreditam na importância da educação para à preservação do planeta.
+          <br><br>
+          A história dessa empresa começou em uma escola da cidade de Araraquara/SP, onde os professores das áreas 
+          de Humanas, perceberam que muitos jovens não tinham consciência sobre a importância do meio ambiente e os 
+          impactos negativos das ações humanas no planeta. Daí em diante, eles se reuniram para planejar atividades e 
+          projetos na escola, para que envolvesse os alunos em mais ações sustentáveis e na conscientização ambiental.
+          <br><br>
+          No decorrer do tempo, o grupo de professores cresceu e levaram essa ideia para outras escolas, levando a 
+          mensagem de conscientização ambiental para um número cada vez maior de jovens. Eles desenvolveram uma série 
+          de atividades práticas, como plantio de árvores, coleta seletiva de lixo, uso consciente da água e da energia
+          elétrica, entre outras, para que os alunos pudessem entender na prática como suas ações podem impactar o meio ambiente.
+          <br><br>
+          Com isso, perceberam que poderiam levar esse assunto, além das escolas, atingindo entidades e outros grupos 
+          que tivessem curiosidade de ter uma palestra interativa sobre a conscientização ao meio ambiente. Como a 
+          demanda de palestras estava alta, o grupo de professores resolveu abrir uma empresa chamada Sustemtabilidade e 
+          Conscientização ambiental para Todos (SCAT).
+          <br><br>
+          Começaram então a promoveram palestras e workshops, convidando especialistas em meio ambiente para falar sobre o tema 
+          e trazer reflexões sobre o assunto. Além do mais, foi criado um canal no YouTube e um site para 
+          divulgarem suas atividades e compartilhar informações sobre meio ambiente e sustentabilidade.</p>
+    </main>
+
+    <footer>
+      <div class="footer-div-left"><!-- Div do rodapé esquerdo (das redes sociais) -->
+        <span class="rede-social">Acesse nossas redes sociais:&nbsp;&nbsp;</span>
+        <a href="https://www.facebook.com/UNIPoficial" class="fa fa-facebook" target="_blank"></a> <!--essa clasee fa, são os 
+        ícones da Fonte Awesome-->
+        <a href="https://www.youtube.com/@UNIPOficial" class="fa fa-youtube" target="_blank"></a>
+        <a href="https://www.instagram.com/unipararaquara/" class="fa fa-instagram" target="_blank"></a>
       </div>
-    </header>
-
-    <!-- Esta div possui o conteúdo central da página (A única parte que muda de uma página para outro)-->
-    <div class="centraliza" style="margin-top: 100px;width: 60%;">
-      <h2>Quem Somos</h2><br>         <!-- subtítulo -->
-      <img src="../img/somos.png"style="width:180px;float:left;margin:5px">
-      <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas condimentum
-        hendrerit. Fusce eget ex diam. Vestibulum accumsan sollicitudin neque ac vulputate. In malesuada mollis
-        tempor. Etiam eu cursus metus, nec finibus nulla. Sed semper libero eget ligula tempor convallis. Maecenas ut
-        aliquam nisl, quis facilisis libero.
-
-        Etiam nunc est, pretium non lorem a, gravida viverra purus. In vitae neque vitae turpis pellentesque tincidunt
-        quis vel ipsum. Ut finibus tincidunt sagittis. Sed vulputate arcu et leo dignissim, vel pretium justo cursus.
-        Mauris tincidunt leo a diam pretium, a dapibus dui tincidunt. Proin a nisl in quam pharetra finibus. Praesent
-        eleifend laoreet velit eu iaculis. Pellentesque in tortor massa. Etiam tempus ac ligula ac facilisis.
-        Suspendisse potenti. Suspendisse rutrum rhoncus erat, non convallis ligula porta ac. Vestibulum leo tortor,
-        ornare nec mauris pretium, vestibulum aliquet felis. Etiam tellus diam, fringilla in lacinia ut, cursus vel
-        nisl.
-
-        Quisque ac hendrerit metus. Praesent viverra sagittis eros, sit amet hendrerit velit placerat aliquam.
-        Suspendisse vel ex lectus. Donec gravida, neque sed maximus pulvinar, urna quam finibus augue, non imperdiet
-        nisl orci sit amet nisl. Fusce suscipit rhoncus tristique. Suspendisse lacus justo, tincidunt non finibus non,
-        congue sit amet augue. Etiam ornare ex nisi, sit amet varius justo porta in. Donec accumsan tortor sed mauris
-        lobortis semper. Quisque eu odio ligula. Sed sit amet elementum dui. Nullam nibh urna, rhoncus quis tellus
-        nec, elementum blandit mi. Phasellus ullamcorper ligula id ipsum malesuada suscipit. Vestibulum et efficitur
-        quam, ac tempor ligula. Maecenas tincidunt placerat leo et posuere. Etiam lacus enim, interdum id varius eu,
-        malesuada non lorem. Fusce auctor vestibulum diam, sed lobortis nisi auctor et.</p>
-    </div>
-  
-    <!-- Div responsável pelo rodaé -->
-    <div class="footer-container">
-      <footer>
-        <div class="footer-div-left"><!-- Div do rodapé esquerdo (das redes sociais) -->
-          <span class="rede-social">Acesse nossas redes sociais:&nbsp;&nbsp;</span>
-          <a href="https://www.facebook.com/UNIPoficial" class="fa fa-facebook" target="_blank"></a>
-          <a href="https://www.youtube.com/@UNIPOficial" class="fa fa-youtube" target="_blank"></a>
-          <a href="https://www.instagram.com/unipararaquara/" class="fa fa-instagram" target="_blank"></a>
-        </div>
-        <div class="footer-div-right">&copy;2023 - Todos os direitos reservados</div><!-- Div do rodapé direito (do copyright
-          ) -->
-      </footer>
-    </div>
-
-
+      <div class="footer-div-right">&copy;2023 - Todos os direitos reservados</div><!-- Div do rodapé direito (do copyright
+        ) -->
+    </footer>
 </body>
 
 </html>

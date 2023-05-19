@@ -5,41 +5,236 @@
   <meta charset="utf-8">; <!--comunica aos navegadores, quais sçao os caractéres usados no site-->
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ajusta o tamanho da tela ao dispoditivo -->
   <Title>Projeto Sustentabilidade</Title> <!-- Titulo da página -->
+  <script src="js/script.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- Página de estilos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--link para o 
-    CDN da fonte awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--link para o  CDN da fonte awesome -->
+
 </head>
 
 <body>
-   
-    <header>
-      Sustentabilidade e Consciência Ambiental para todos<br>Palestras Informativas 
-      <div class="centraliza" style="background-image: Url(Img/fundo2.png);background-repeat: repeat;;padding-top: 10px;"> <!--uma 
+
+  <header>
+    Sustentabilidade e Consciência Ambiental para todos<br>Palestras Informativas
+    <div class="centraliza" style="background-image: Url(Img/fundo2.png);background-repeat: repeat;;padding-top: 10px;"> <!--uma 
       subimagem que fica embaixo dos botões-->
-        <!-- Cada botão é animado através da classe glow-on-hover e abre outra página do projeto através do evento onclick, que quando 
+      <!-- Cada botão é animado através da classe glow-on-hover e abre outra página do projeto através do evento onclick, que quando 
         clicado abre a página especificada no href -->
-        <button class="glow-on-hover" type="button" onclick="window.location.href='index.html';">Quem Somos</button> 
-        <button class="glow-on-hover" type="button" onclick="window.location.href='project.html';">Nosso Projeto</button>
-        <button class="glow-on-hover" type="button" >Inscreva-se</button>
-        <button class="glow-on-hover" type="button" onclick="window.location.href='contato.html';">Nosso Contato</button>
-      </div>
-    </header>
+      <button class="glow-on-hover" type="button" onclick="window.location.href='index.html';">Quem Somos</button>
+      <button class="glow-on-hover" type="button" onclick="window.location.href='project.html';">Nosso Projeto</button>
+      <button class="glow-on-hover" type="button">Inscreva-se</button>
+      <button class="glow-on-hover" type="button" onclick="window.location.href='contato.html';">Nosso Contato</button>
+    </div>
 
-    <main style="background-image: Url(Img/fundo.png);">
-          <h2 >Inscreva-se</h2> <!-- subtítulo -->
-          
-    </main>
+  </header>
+  <main style="background-image: Url(Img/fundo.png);">
 
-    <footer>
-      <div class="footer-div-left"><!-- Div do rodapé esquerdo (das redes sociais) -->
-        <span class="rede-social">Acesse nossas redes sociais:&nbsp;&nbsp;</span>
-        <a href="https://www.facebook.com/UNIPoficial" class="fa fa-facebook" target="_blank"></a>
-        <a href="https://www.youtube.com/@UNIPOficial" class="fa fa-youtube" target="_blank"></a>
-        <a href="https://www.instagram.com/unipararaquara/" class="fa fa-instagram" target="_blank"></a>
+    <h2>Inscreva-se para participar</h2> <!-- subtítulo -->
+
+    <form name="form" id="form_cadastro" method="post" onsubmit="return ValidateForm()"> 
+      <!-- chama a função para validar os dados, retona true se não houver erros e false se houver -->
+      <!-- Se retornar true envia o formulario, se retornar false não faz nada-->
+
+      <div style="text-align: left;">
+        <div>
+          <label class="form-label-title">Nome da Entidade:</label><br>  <!--A classe form-label-title (no css) define o tamnho da fonte-->
+          <input type="text" id="nome" size="40" maxlenght="100" />
+          <label class="form-label-error" id="nome_erro" style="visibility: hidden;">*Digite o nome</label> <!--A classe form-label-erro (no css) define o tamnho da fonte-->
+        </div>
+        <div>
+          <label class="form-label-title">Telefone:</label><br>
+          <input type="text" id="fone" size="40" maxlenght="11" />
+          <label class="form-label-error" id="fone_erro" style="visibility: hidden">*Digite o telefone</label>
+        </div>
+        <div>
+          <label class="form-label-title">Endereço:</label><br>
+          <input type="text" id="endereco" size="40" maxlenght="100" />
+          <label class="form-label-error" id="endereco_erro" style="visibility: hidden">*Digite o endereço</label>
+        </div>
+        <div>
+          <label class="form-label-title">Quantidade de Participantes:</label><br>
+          <input type="text" id="participante" size="40" maxlenght="15" />
+          <label class="form-label-error" id="participante_erro" style="visibility: hidden">*Informe a quantidade</label>
+        </div>
+        <div>
+          <label class="form-label-title">Faixa Etária:</label><br>
+          <input type="text" id="idade" size="40" maxlenght="15" />
+          <label class="form-label-error" id="idade_erro" style="visibility: hidden">*Informe a faixa etária</label>
+        </div>
+        <div>
+          <label class="form-label-title" for="atividades">Gostaria de ter atividades práticas?</label>
+          <input type="checkbox" id="tem_atividade" name="distribuição" onclick="checkBox()" >
+        <br>
+        </div>
+        <div>
+          <label class="form-label-title" for="práticas">Quais atividades?</label><br>
+
+          <input type="checkbox" id="pratica_d" name="distribuição" disabled >
+          <label class="form-label-radio" for="distribuição">Distribuição de panfletos</label><br>
+
+          <input type="checkbox" id="pratica_l" name="limpeza" disabled >
+          <label class="form-label-radio" for="limpeza">Limpeza de Local Público</label><br>
+
+          <input type="checkbox" id="pratica_s" name="sacos" disabled>
+          <label class="form-label-radio" for="sacos">Sacos de lixo em locais estratégicos</label><br>
+          <label class="form-label-error" id="pratica_erro" style="visibility: hidden">*Assinale ao menos uma
+            alternativa</label>
+        </div><br>
+        <button type="submit" id="btEnviar">Enviar</button>
+        <button type="button" onclick="Limpa()">Limpar</button>  <!-- chama a função para limpar os campos -->
+
+
       </div>
-      <div class="footer-div-right">&copy;2023 - Todos os direitos reservados</div><!-- Div do rodapé direito (do copyright
-        ) -->
-    </footer>
+
+    </form>
+    <br><br>
+  </main>
+
+  <footer>
+    <div class="footer-div-left"><!-- Div do rodapé esquerdo (das redes sociais) -->
+      <span class="rede-social">Acesse nossas redes sociais:&nbsp;&nbsp;</span>
+      <a href="https://www.facebook.com/UNIPoficial" class="fa fa-facebook" target="_blank"></a>
+      <a href="https://www.youtube.com/@UNIPOficial" class="fa fa-youtube" target="_blank"></a>
+      <a href="https://www.instagram.com/unipararaquara/" class="fa fa-instagram" target="_blank"></a>
+    </div>
+    <div class="footer-div-right">&copy;2023 - Todos os direitos reservados</div><!-- Div do rodapé direito (do copyright
+              ) -->
+  </footer>
+
+
+
+  <script>
+
+    function ValidateForm() {
+      var erro = false; // No começo não tem nenhum erro, então definimos como false 
+
+      var nome = document.getElementById("nome"); //atribui o input nome a uma variável
+      var nome_erro = document.getElementById("nome_erro"); //atribui o label nome_erro a uma variável
+
+      var fone = document.getElementById("fone"); //atribui o input fone a uma variável
+      var fone_erro = document.getElementById("fone_erro");
+     
+      var endereco = document.getElementById("endereco"); //atribui o input endereco a uma variável
+      var endereco_erro = document.getElementById("endereco_erro");
+      
+      var participante = document.getElementById("participante"); //atribui o input participante a uma variável
+      var participante_erro = document.getElementById("participante_erro");
+      
+      var idade = document.getElementById("idade"); //atribui o input idade a uma variável
+      var idade_erro = document.getElementById("idade_erro");
+      var ter_atividade = document.getElementById("tem_atividade");
+      var pratica_d = document.getElementById("pratica_d");
+      var pratica_l = document.getElementById("pratica_l");
+      var pratica_s = document.getElementById("pratica_s");
+
+      if (isEmpty(nome.value)) { //Verifica através da variável se o valor foi preenchido
+        nome_erro.style.visibility = "visible"; //Se tiver erro o label nome_erro ficará visível
+        erro = true;
+      } else {
+        nome_erro.style.visibility = "hidden"; //Se não, ele ficará escondido
+      }
+
+      if (isEmpty(fone.value)) { //Verifica através da variável se o valor foi preenchido
+        fone_erro.style.visibility = "visible"; //Se tiver erro o label fone_erro ficará visível
+        erro = true;
+      } else {
+        fone_erro.style.visibility = "hidden"; //Se não, ele ficará escondido
+      }
+      
+      
+      if (isEmpty(endereco.value)) { //Verifica através da variável se o valor foi preenchido
+        endereco_erro.style.visibility = "visible";//Se tiver erro o label endereco_erro ficará visível
+        erro = true;
+      } else {
+        endereco_erro.style.visibility = "hidden"; //Se não, ele ficará escondido
+      }
+      
+      if (isEmpty(participante.value)) { //Verifica através da variável se o valor foi preenchido
+        participante_erro.style.visibility = "visible"; //Se tiver erro o label participante_erro ficará visível
+        erro = true;
+      } else {
+        participante_erro.style.visibility = "hidden";
+      }
+      
+      if (isEmpty(idade.value)) { //Verifica através da variável se o valor foi preenchido
+        idade_erro.style.visibility = "visible"; //Se tiver erro o label idade_erro ficará visível
+        erro = true;
+      } else {
+        idade_erro.style.visibility = "hidden"; //Se não, ele ficará escondido
+      }
+
+      //verifica se todos os checkbox estão desmarcados
+      if (ter_atividade.checked && !pratica_d.checked && !pratica_l.checked && !pratica_s.checked) {
+        pratica_erro.style.visibility = "visible";//se todos estiverem desmarcados, ele acusa erro
+        erro = true;
+      } else {
+        pratica_erro.style.visibility = "hidden"; //Se algum, alguns estiver(em) marcado não tem erro
+      }
+      
+      
+      if (erro==false){  //Verifica se houve algum erro  no formulário
+        alert("A sua inscrição foi enviada com sucesso!\nEm breve entraremos em contato.")
+        return true; //Se não houver, retorne true e envie o formulário
+      }else{
+        return false; //Se tiver erro, retorna falso e não envia o formulário 
+      }
+
+    }
+
+    function Limpa(){
+      var nome = document.getElementById("nome");
+      var nome_erro = document.getElementById("nome_erro");
+      var fone = document.getElementById("fone");
+      var fone_erro = document.getElementById("fone_erro");
+      var endereco = document.getElementById("endereco");
+      var endereco_erro = document.getElementById("endereco_erro");
+      var participante = document.getElementById("participante");
+      var participante_erro = document.getElementById("participante_erro");
+      var idade = document.getElementById("idade");
+      var idade_erro = document.getElementById("idade_erro");
+      var pratica_d = document.getElementById("pratica_d");
+      var pratica_l = document.getElementById("pratica_l");
+      var pratica_s = document.getElementById("pratica_s");
+      var tem_atividade = document.getElementById("tem_atividade");
+
+      nome.value="";
+      nome_erro.style.visibility = "hidden"
+      fone.value="";
+      fone_erro.style.visibility = "hidden"
+      endereco.value="";
+      endereco_erro.style.visibility = "hidden"
+      participante.value="";
+      participante_erro.style.visibility = "hidden"
+      pratica_erro.style.visibility = "hidden"
+      pratica_d.checked=false;
+      pratica_l.checked=false;
+      pratica_s.checked=false;
+      idade.value="";
+      idade_erro.style.visibility = "hidden"
+      tem_atividade.checked=false;
+      document.getElementById("pratica_d").disabled=true;
+      document.getElementById("pratica_s").disabled=true;
+      document.getElementById("pratica_l").disabled=true;
+
+
+  }
+
+  function checkBox(){
+      var tem_atividade = document.getElementById("tem_atividade");
+   
+      if(tem_atividade.checked){
+        document.getElementById("pratica_d").disabled=false;
+        document.getElementById("pratica_s").disabled=false;
+        document.getElementById("pratica_l").disabled=false;
+      }else{
+        document.getElementById("pratica_d").disabled=true;
+        document.getElementById("pratica_s").disabled=true;
+        document.getElementById("pratica_l").disabled=true;
+      }
+
+  }
+
+  </script>
 
 </body>
 

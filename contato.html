@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">; <!--comunica aos navegadores, quais sçao os caractéres usados no site-->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ajusta o tamanho da tela ao device -->
+  <Title>Projeto Sustentabilidade</Title> <!-- Titulo da página -->
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- Página de estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--link para 
+  o CDN da fonte awesome -->
+</head>
+
+<body>
+
+  <header>
+    Sustentabilidade e Consciência Ambiental para todos<br>Palestras Informativas
+    <div class="centraliza" style="background-image: Url(Img/fundo2.png);background-repeat: repeat;;padding-top: 10px;">
+      <!-- Cada botão é animado através da classe glow-on-hover e abre outra página do projeto através do evento onclick, que 
+            quando clicado abre a página especificada no href -->
+      <button class="glow-on-hover" type="button" onclick="window.location.href='index.html';">Quem Somos</button>
+      <button class="glow-on-hover" type="button" onclick="window.location.href='project.html';">Nosso Projeto</button>
+      <button class="glow-on-hover" type="button" onclick="window.location.href='inscreva.html';">Inscreva-se</button>
+      <button class="glow-on-hover" type="button">Contato</button>
+    </div>
+  </header>
+  <main style="background-image: Url(Img/fundo.png);"> <!--imagem do papel reciclado do fundo-->
+    <h2>Entre em contato</h2> <!-- subtítulo -->
+    <p style="text-align: justify;">Quer ficar por dentro de todas as novidades sobre o que se passa na nossa região
+      sobre
+      o meio ambiente?
+      Então siga-nos em nossas redes sociais e faça parte da nossa comunidade!
+      <br><br>
+    <h2>Ficou com dúvida, entre em contato abaixo:</h2>
+    </p>
+
+
+    <form id="form_contato" method="post" onsubmit="return ValidateForm()">
+      <div style="text-align: left;">
+        <div>
+          <label class="form-label-title"> Digite seu nome: </label><br>
+          <input nome="nome" id="nome" size="40" type="text">
+          <label class="form-label-error" id="lblErroNome" style="visibility: hidden">*Digite o nome</label>
+        </div>
+        <div class="div_input">
+          <label class="form-label-title"> Digite seu e-mail: </label><br>
+          <input nome="email" id="email" size="40" type="email">
+          <label class="form-label-error" id="lblErroEmail" style="visibility: hidden">*Digite o e-mail</label>
+        </div>
+        <div class="div_input">
+          <label class="form-label-title"> Digite sua mensagem: </label><br>
+          <textarea name="Mensagem" id="mensagem" style="width:310px"></textarea>
+          <label class="form-label-error" id="lblErroMensagem" style="visibility: hidden">*Digite a mensagem</label>
+        </div><br>
+        <button type="submit" id="btEnviar">Enviar</button>
+        <button type="button" id="btLimpar"  onclick="Limpa()">Limpar</button>
+      </div>
+    </form>
+    <br><br>
+  </main>
+
+  <footer>
+    <div class="footer-div-left"><!-- Div do rodapé esquerdo (das redes sociais) -->
+      <span class="rede-social">Acesse nossas redes sociais:&nbsp;&nbsp;</span>
+      <a href="https://www.facebook.com/UNIPoficial" class="fa fa-facebook" target="_blank"></a>
+      <a href="https://www.youtube.com/@UNIPOficial" class="fa fa-youtube" target="_blank"></a>
+      <a href="https://www.instagram.com/unipararaquara/" class="fa fa-instagram" target="_blank"></a>
+    </div>
+    <div class="footer-div-right">&copy;2023 - Todos os direitos reservados</div><!-- Div do rodapé direito (do copyright
+          ) -->
+  </footer>
+
+  <script>
+      
+      function ValidateForm (){
+        var erro = false;
+
+        var nome = document.getElementById("nome");
+        var lblErroNome = document.getElementById("lblErroNome");
+
+        var email = document.getElementById("email");
+        var lblErroEmail = document.getElementById("lblErroEmail");
+
+        var mensagem = document.getElementById("mensagem");
+        var lblErroMensagem = document.getElementById("lblErroMensagem");
+
+        if (isEmpty(nome.value)) {
+          lblErroNome.style.visibility = "visible";
+          erro = true;
+        } else {
+          lblErroNome.style.visibility = "hidden";
+        }
+
+        if (isEmpty(email.value)) {
+          lblErroEmail.style.visibility = "visible";
+          erro = true;
+        } else {
+          lblErroEmail.style.visibility = "hidden";
+        }
+
+        if (isEmpty(mensagem.value)) {
+          lblErroMensagem.style.visibility = "visible";
+          erro = true;
+        } else {
+          lblErroMensagem.style.visibility = "hidden";
+        }
+
+        if (erro==false) {
+          alert("A sua mensagem foi enviada com sucesso!\nEm breve, entramos em contato.")
+          return true;
+        } else{
+          return false;
+        }
+
+      }
+
+      function Limpa(){
+        var nome = document.getElementById("nome")
+        var lblErroNome = document.getElementById("lblErroNome");
+        
+        var email = document.getElementById("email")
+        var lblErroEmail = document.getElementById("lblErroEmail");
+        
+        var mensagem = document.getElementById("mensagem")
+        var lblErroMensagem = document.getElementById("lblErroMensagem");
+
+        nome.value="";
+        lblErroNome.style.visibility = "hidden";
+
+        email.value="";
+        lblErroEmail.style.visibility = "hidden";
+        
+        mensagem.value="";
+        lblErroMensagem.style.visibility = "hidden";
+      }
+
+  </script>
+
+
+
+</body>
+
+</html>
